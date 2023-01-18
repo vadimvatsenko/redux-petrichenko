@@ -39,25 +39,11 @@ store.subscribe(() => {
   console.log(store.getState());// получает значение state
 })
 //actions
-export const addINC = () => {
-  return {
-    type: 'INC',
-    payload: 'value+1'
-  }
-}
-export const addDEC = () => {
-  return {
-    type: 'DEC',
-    payload: 'value-1'
-  }
-}
-export const clickRND = () => {
-  const rundomValue = Math.floor(Math.random() * 10)
-  return {
-    type: 'RND',
-    payload: rundomValue
-  }
-}
+export const addINC = () => ({ type: 'INC', payload: 'valueINC' });
+export const addDEC = () => ({ type: 'DEC', payload: 'valueDEC' });
+export const clickRND = (rundomValue) => ({ type: 'RND', payload: 'rundomValue' });
+
+
 
 
 

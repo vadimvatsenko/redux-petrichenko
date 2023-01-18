@@ -15,13 +15,16 @@ export default function Buttons() {
         if(e.target.name === 'DEC' && value !==0) {
             dispatch(addDEC());
         }
-        if(e.target.name === 'INC') {
+        if (e.target.name === 'INC') {
+            
             dispatch(addINC());
         }
     }
 
     const onClickRND = () => {
-        dispatch(clickRND())
+        const rundomValue = Math.floor(Math.random() * 10);
+        console.log(rundomValue)
+        dispatch(clickRND(rundomValue))
     }
 
 
