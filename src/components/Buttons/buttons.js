@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 //action
-import { addINC, addDEC } from "index";
+import { addINC, addDEC, clickRND } from "index";
 
-export default function Buttons({ children }) {
+export default function Buttons() {
     const value = useSelector(state => state);
     console.log(value)// значение state в h1
 
@@ -12,14 +12,18 @@ export default function Buttons({ children }) {
 
     
     const onClickButton = (e) => {
-        console.log(e.target.name)
-        dispatch(addINC());//вызываем action
-    }
-    const onClickDec = () => {
-        if (value !== 0) {
-            dispatch(addDEC());//вызываем action
+        if(e.target.name === 'DEC' && value !==0) {
+            dispatch(addDEC());
+        }
+        if(e.target.name === 'INC') {
+            dispatch(addINC());
         }
     }
+
+    const onClickRND = () => {
+        dispatch(clickRND())
+    }
+
 
     return (
         <div>
@@ -27,14 +31,18 @@ export default function Buttons({ children }) {
                 display: 'flex'
             }}>
                 <button
-                    onClick={onClickDec}
+                    onClick={onClickButton}
                     name='DEC'
                     type="button">DEC</button>
                 
                 <button
-                    onClick={onClickInc}
+                    onClick={onClickButton}
                     name='INC'
                     type="button">INC</button>
+                <button
+                    onClick={onClickRND}
+                    name='RND'
+                    type="button">RND</button>
             
             </div>
             <h1>{value}</h1>

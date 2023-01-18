@@ -17,7 +17,10 @@ const reducer = (state = 0, action) => {
     case "INC":
       return state + 1;
     case 'DEC':
-      return state -1
+      return state - 1;
+    case 'RND':
+      return state * action.payload
+
     default: return state 
   }
   
@@ -29,6 +32,9 @@ const reducer = (state = 0, action) => {
 // создание store
 const store = createStore(reducer);
 
+// const updateValue = () => {
+
+// }
 store.subscribe(() => {
   console.log(store.getState());// получает значение state
 })
@@ -36,13 +42,20 @@ store.subscribe(() => {
 export const addINC = () => {
   return {
     type: 'INC',
-    payload: ''
+    payload: 'value+1'
   }
 }
 export const addDEC = () => {
   return {
     type: 'DEC',
-    payload: ''
+    payload: 'value-1'
+  }
+}
+export const clickRND = () => {
+  const rundomValue = Math.floor(Math.random() * 10)
+  return {
+    type: 'RND',
+    payload: rundomValue
   }
 }
 
