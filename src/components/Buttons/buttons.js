@@ -1,11 +1,10 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 //action
-import { addINC, addDEC, clickRND } from "index";
+import { addINC, addDEC, clickRND } from '../../actions';
 
 export default function Buttons() {
-    const value = useSelector(state => state);
-    console.log(value)// значение state в h1
+    const value = useSelector(state => state.value);
+    console.log(value.value)// значение state в h1
 
     //доступ к actions
     const dispatch = useDispatch();
