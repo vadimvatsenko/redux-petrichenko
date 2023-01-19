@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/redux-petrichenko/static/css/main.7acaea2f.css",
+    "main.js": "/redux-petrichenko/static/js/main.f2c873b7.js",
+    "index.html": "/redux-petrichenko/index.html",
+    "main.7acaea2f.css.map": "/redux-petrichenko/static/css/main.7acaea2f.css.map",
+    "main.f2c873b7.js.map": "/redux-petrichenko/static/js/main.f2c873b7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.f2c873b7.js"
+  ]
+}
